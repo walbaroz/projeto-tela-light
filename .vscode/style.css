@@ -38,6 +38,7 @@ body {
   /*Tudo que será declarado aqui abaixo, é tudo o que foi declarado anteriormente, só que tudo em uma linha. Também pode ser conhecido como shorthand ou atalho*/
   /*background: color image repeate position/size*/
   background: var(--bg-url) no-repeat top center / cover; /*cover cobre todo o espaço visivel, fica no tamanho da tela total*/
+  height: 100vh; /*ajustando para que a imagem fique com a altura de acordo com dispositivo  */
 }
 
 body * {
@@ -46,7 +47,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%; /*anteriormente estava em 360px fixo*/
+  max-width: 588px;
   /*border: 1px solid red;*/
   margin: 56px auto 0px; /*Isso é mesmo coisas do que isso: =>
   margin-top: 56px;
