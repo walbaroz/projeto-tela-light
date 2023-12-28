@@ -98,11 +98,17 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.2s; /*não preciso colocar o forwards pois ele volta para left 0, e o lef já é 0*/
 }
 
 .light #switch button {
-  right: 0;
-  left: initial; /*left que volta para sua posição inicial*/
+  /*right: 0; por causa da animação não vou usar mais o light 0 */
+  /*left: initial; left que volta para sua posição inicial / por causa da animação também não vou mais usar esse tambem*/
+  animation: slide-in 0.4s forwards; /* vai fazer a animação marter as propriedades que foi definido no final*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -182,12 +188,30 @@ footer {
 
 /* media queries - */
 @media (min-width: 700px) {
-  /* apartir do momento que a tela for maior que 700, mudara para o background selecionado*/
   :root {
     --bg-url: url(./assets/bg-desktop.jpg); /*quando tela for maior que 700px, usar essa imagem de background*/
   }
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg); /*quando tela foi maior 700px no light, mudar para esse background*/
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
