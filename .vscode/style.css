@@ -179,3 +179,15 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+
+/* media queries - */
+@media (min-width: 700px) {
+  /* apartir do momento que a tela for maior que 700, mudara para o background selecionado*/
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg); /*quando tela for maior que 700px, usar essa imagem de background*/
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg); /*quando tela foi maior 700px no light, mudar para esse background*/
+  }
+}
